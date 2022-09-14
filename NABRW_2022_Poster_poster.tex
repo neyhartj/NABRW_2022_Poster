@@ -1,0 +1,701 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Jacobs Landscape Poster
+% LaTeX Template
+% Version 1.1 (14/06/14)
+%
+% Created by:
+% Computational Physics and Biophysics Group, Jacobs University
+% https://teamwork.jacobs-university.de:8443/confluence/display/CoPandBiG/LaTeX+Poster
+%
+% Further modified by:
+% Nathaniel Johnston (nathaniel@njohnston.ca)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[final]{beamer}
+
+% Use the beamerposter package for laying out the poster
+\usepackage[scale=1.24,orientation=portrait]{beamerposter}
+% \usepackage[scale=1.24,orientation=landscape]{beamerposter}
+
+\usetheme{confposter} % Use the confposter theme supplied with this template
+
+\usepackage{wrapfig} % Use for wrapping figures
+
+\usepackage[super,numbers]{natbib} % Use for fine-tunning the captions
+
+
+%% Define the paths to the Mendeley library
+% \newcommand\mendlibrary{C:/Users/jeffrey.neyhart/Documents/Literature/MendeleyLibrary/library}
+
+
+
+%% Configure code blocks
+\usepackage{listings} % Use for code blocks
+\usepackage{color}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=Java,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+
+% \usepackage{biblatex} % Bibliography
+
+\setbeamercolor{block title}{fg=greenset1,bg=white} % Colors of the block titles
+\setbeamercolor{block body}{fg=black,bg=white} % Colors of the body of blocks
+\setbeamercolor{block alerted title}{fg=white,bg=blueset1!70} % Colors of the highlighted block titles
+\setbeamercolor{block alerted body}{fg=black,bg=blueset1!10} % Colors of the body of highlighted blocks
+
+% Many more colors are available for use in beamerthemeconfposter.sty
+
+%-----------------------------------------------------------
+
+% Define the column widths and overall poster size
+% To set effective sepwid, onecolwid and twocolwid values, first choose how many columns you want and how much separation you want between columns
+% In this template, the separation width chosen is 0.02 of the paper width and a 3-column layout
+% onecolwid should therefore be (1-(ncol + 1)*sepwid)/ncol e.g. (1-(3+1)*0.024)/3 = 0.3013333
+% Set twocolwid to be (2*onecolwid)+sepwid = 0.6266666
+% Set threecolwid to be (3*onecolwid)+2*sepwid = 0.9279999
+
+\newlength{\sepwid}
+\newlength{\onecolwid}
+\newlength{\twocolwid}
+\newlength{\threecolwid}
+
+%% Poster size
+\setlength{\paperwidth}{44in} % A0 width: 46.8in
+\setlength{\paperheight}{44in} % A0 height: 33.1in
+
+
+\setlength{\sepwid}{0.024\paperwidth} % Separation width (white space) between columns
+\setlength{\onecolwid}{0.3013333\paperwidth} % Width of one column
+\setlength{\twocolwid}{0.6266666\paperwidth} % Width of two columns
+\setlength{\threecolwid}{0.9279999\paperwidth} % Width of three columns
+\setlength{\topmargin}{-0.5in} % Reduce the top margin size
+%-----------------------------------------------------------
+
+\usepackage{graphicx}  % Required for including images
+
+\usepackage{booktabs} % Top and bottom rules for tables
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\title{An Active Learning Application for Quantitative \\ Genetics Instruction Using \textit{R} and \textit{shiny}} % Poster title
+% Add \\ to induce new line
+
+\vspace{1cm}
+
+\author{Jeffrey L. Neyhart\textsuperscript{1*} and Eric Watkins\textsuperscript{2}} % Author(s)
+
+\institute{\textsuperscript{1}Department of Agronomy and Plant Genetics, and \textsuperscript{2}Department of Horticultural Science, University of Minnesota}
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\addtobeamertemplate{block end}{}{\vspace*{2ex}} % White space under blocks
+\addtobeamertemplate{block alerted end}{}{\vspace*{2ex}} % White space under highlighted (alert) blocks
+
+\setlength{\belowcaptionskip}{2ex} % White space under figures
+\setlength\belowdisplayshortskip{2ex} % White space under equations
+
+\begin{frame}[t] % The whole poster is enclosed in one beamer frame
+
+\begin{columns}[t] % The whole poster consists of three major columns, the second of which is split into two columns twice
+% the [t] option aligns each column's content to the top
+
+%----------------------------------------------------------------------------------------
+
+\begin{column}{\sepwid}\end{column} % Empty spacer column
+
+\begin{column}{\onecolwid} % The first column
+
+
+%----------------------------------------------------------------------------------------
+%	TAKEAWAYS
+%----------------------------------------------------------------------------------------
+
+\setbeamercolor{block alerted title}{fg=white,bg=orangeset1!70} % Change the alert block title colors
+\setbeamercolor{block alerted body}{fg=black,bg=orangeset1!10} % Change the alert block body colors
+
+\begin{alertblock}{\Large{Takeaways}}
+
+\begin{itemize}
+  \item \textbf{We developed an active learning application for instruction in introductory quantitative and population genetics.}
+  \vspace{0.5cm}
+  \item \textbf{Common topics in plant breeding courses are covered in three modules.}
+  \vspace{0.5cm}
+  \item \textbf{The application relies on \textit{R} and has a graphical user interface built using the package \textit{shiny}. The software is freely available, modular, and expandable.}
+\end{itemize}
+
+\end{alertblock}
+
+%----------------------------------------------------------------------------------------
+%	INTRODUCTION
+%----------------------------------------------------------------------------------------
+
+\begin{block}{Introduction}
+
+
+%% Text
+An introduction to quantitative and population genetics is fundamental in plant breeding courses; however, these subjects rely heavily on theory and statistics, which may not be readily understood by all students.
+
+\vspace{1cm}
+
+Active learning can help improve comprehension of such material \cite{Freeman2014} through the use of games or simulations \cite{Bernardo2017a, McKeachie2006}.
+
+\vspace{1cm}
+
+The programming language \textit{R} is very useful for analysis and simulations in quantitative and population genetics, and the \textit{shiny} \cite{Chang2017} package provides tools for constructing web applications that can deploy \textit{R} functions.
+
+\vspace{1cm}
+
+During an introductory undergraduate course in plant breeding, we developed a \textit{shiny} application (Shiny App) as an active-learning tool to augment traditional lecture-based instruction.
+
+\end{block}
+
+
+% %----------------------------------------------------------------------------------------
+% %	OBJECTIVES
+% %----------------------------------------------------------------------------------------
+%
+% % Set the color
+% \setbeamercolor{block alerted title}{fg=white,bg=blueset1!70} % Change the alert block title colors
+% \setbeamercolor{block alerted body}{fg=black,bg=blueset1!10} % Change the alert block body colors
+%
+% \begin{alertblock}{\large{Objectives}}
+%
+% \begin{footnotesize}
+%
+% \begin{itemize}
+%   \item Identify markers and genomic regions of elevated plasticity and stability
+%   \item Compare gene annotation frequency in these genomic regions
+%   \item Assess the impact to genomewide prediction accuracy of using markers with highly plastic or stable effects
+% \end{itemize}
+%
+% \end{footnotesize}
+%
+%
+%
+% \end{alertblock}
+
+
+
+
+%----------------------------------------------------------------------------------------
+%	MATERIALS AND MATERIALS
+%----------------------------------------------------------------------------------------
+
+\begin{block}{Application Development}
+
+
+%% Application structure
+\textbf{Application Structure}
+
+\vspace{0.5cm}
+
+\begin{center}
+\begin{figure}
+  % \includegraphics[width=1\linewidth]{figures/app_demo.png}
+\end{figure}
+\end{center}
+
+\vspace{0.5cm}
+
+A Shiny App is built on two \textit{R} scripts:
+
+\begin{itemize}
+  \item \texttt{server.R} - performs simulations, operations, and generates plots.
+  \item \texttt{ui.R} - specifies the user interface, including layout, color scheme, and Java/HTML settings.
+\end{itemize}
+
+\vspace{1cm}
+
+Each module contains: 1) a sidebar with brief directions and widgets for controlling user input; and 2) an output area for plots and tables.
+
+\vspace{1cm}
+
+The advantage of a Shiny App is its ease-of-use: no knowledge of \textit{R} is necessary, but students can explore further to understand the underlying code.
+
+
+
+\vspace{1cm}
+
+%% Assumptions
+\textbf{Assumptions}
+
+\vspace{0.5cm}
+
+Most assumptions follow the basic theory in quantitative and population genetics that is often taught in plant breeding courses \cite{Bernardo2010, Acquaah2012}
+
+\begin{itemize}
+  \item All quantitative trait loci (QTL) influencing a trait are unlinked.
+  \item Populations are composed of randomly mating diploid individuals.
+  \item There is no mutation or migration.
+  \item Non-genetic effects are normally-distributed.
+\end{itemize}
+
+
+\vspace{1cm}
+
+
+
+
+% End the M&M block
+\end{block}
+
+
+%----------------------------------------------------------------------------------------
+
+\end{column} % End of the first column (i.e. Introduction, objectives, and methods)
+
+\begin{column}{\sepwid}\end{column} % Empty spacer column
+
+\begin{column}{\twocolwid} % Begin a column which is two columns wide (column 2)
+
+
+% Removing the two-columns within the middle column structure
+% \begin{columns}[t,totalwidth=\twocolwid] % Split up the two columns wide column
+%
+% \begin{column}{\onecolwid}\vspace{-.6in} % The first column within column 2 (column 2.1)
+
+%----------------------------------------------------------------------------------------
+%	RESULTS
+%----------------------------------------------------------------------------------------
+
+\begin{block}{Modules}
+
+% Now split into two columns
+\begin{columns}[t,totalwidth=\twocolwid] % Split up the two columns wide column
+
+
+\begin{column}{\onecolwid} % The first column within column 2 (column 2.1)
+
+%----------------------------------------------------------------------------------------
+
+%% Figure of the first module
+
+\textit{Module 1: Randomly Mating Populations}
+
+\vspace{0.5cm}
+
+\begin{center}
+\begin{figure}
+  % \includegraphics[width=1\linewidth]{figures/Figure1.png}
+\end{figure}
+\end{center}
+
+% Remove some vertical space
+\vspace{-1cm}
+
+% Now split into two columns
+\begin{columns}[t,totalwidth=\onecolwid] % Split up the two columns wide column
+
+\begin{column}{0.4\onecolwid} % The first column within column 2 (column 2.1)
+
+User-adjusted parameters:
+
+\begin{itemize}
+  \item Starting allele frequency
+  \item Population size
+  \item Number of generations
+\end{itemize}
+
+\end{column}
+\begin{column}{0.6\onecolwid} % The first column within column 2 (column 2.1)
+
+Output:
+
+\begin{itemize}
+  \item Frequency of a single allele in a randomly mating population
+  \item Generation of allele fixation (if applicable)
+\end{itemize}
+
+
+\end{column}
+\end{columns}
+
+
+
+%----------------------------------------------------------------------------------------
+
+\end{column} % End of column 2.1
+
+\begin{column}{\onecolwid} % The second column within column 2 (column 2.2)
+
+%----------------------------------------------------------------------------------------
+
+
+%% Figure of the second module
+
+\textit{Module 2: Genetic Variance}
+
+\vspace{0.5cm}
+
+\begin{center}
+\begin{figure}
+  % \includegraphics[width=1\linewidth]{figures/Figure2.png}
+\end{figure}
+\end{center}
+
+% Vertically adjust text for the different sizes of the figures
+\vspace{45.46271px}
+
+% Remove some vertical space
+\vspace{-1cm}
+
+% Now split into two columns
+\begin{columns}[t,totalwidth=\onecolwid] % Split up the two columns wide column
+
+\begin{column}{0.4\onecolwid} % The first column within column 2 (column 2.1)
+
+User-adjusted parameters:
+
+\begin{itemize}
+  \item Allele frequency
+  \item Additive effect
+  \item Dominance effect
+\end{itemize}
+
+\end{column}
+\begin{column}{0.6\onecolwid} % The first column within column 2 (column 2.1)
+
+Output:
+
+\begin{itemize}
+  \item Level of additive variance ($V_A$, red), dominance variance ($V_D$, blue), and total genetic variance ($V_G$, black)
+\end{itemize}
+
+
+\end{column}
+\end{columns}
+
+
+
+
+%----------------------------------------------------------------------------------------
+
+\end{column} % End of column 2.2
+
+\end{columns} % End of the split of column 2
+
+
+%-------------------------------
+
+% % Insert an alert block that spans the whole width
+%
+% % Set the color
+% \setbeamercolor{block alerted title}{fg=white,bg=orangeset1!70} % Change the alert block title colors
+% \setbeamercolor{block alerted body}{fg=black,bg=orangeset1!10} % Change the alert block body colors
+%
+% \begin{alertblock}{}
+%
+% % Divide into columns
+% % Now split into two columns
+% \begin{columns}[t,totalwidth=\twocolwid] % Split up the two columns wide column
+%
+% \begin{column}{\onecolwid} %
+%
+% %%% Fill in here
+%
+% \end{column} % End of column
+%
+% %%-----------------------------------
+%
+% \begin{column}{\onecolwid} % The second column within column 2 (column 2.2)
+%
+% %%% Fill in here
+%
+%
+% \end{column} % End of column
+%
+% \end{columns} % End of the split of column
+%
+% \end{alertblock}
+
+%--------------------------------
+
+
+
+
+
+%% Add some space
+\vspace{2cm}
+
+%-------------------------------
+%% Split the section into three columns
+\begin{columns}[t,totalwidth=\twocolwid]
+
+%% Three columns will exist in this space - each of 2/3 * onecolwidth
+
+
+%% The first column
+\begin{column}{\onecolwid}
+% \begin{column}{\onecolwid}
+
+%% Figure of the third module
+
+\textit{Module 3: Response to Selection}
+
+\vspace{0.5cm}
+
+\begin{center}
+\begin{figure}
+  % \includegraphics[width=1\linewidth]{figures/Figure3.png}
+\end{figure}
+\end{center}
+
+
+% Remove some vertical space
+\vspace{-1cm}
+
+% Now split into two columns
+\begin{columns}[t,totalwidth=\onecolwid] % Split up the two columns wide column
+
+\begin{column}{0.4\onecolwid} % The first column within column 2 (column 2.1)
+
+User-adjusted parameters:
+
+\begin{itemize}
+  \item Allele frequencies
+  \item Heritability
+  \item Selection intensity
+  \item Population size
+\end{itemize}
+
+\end{column}
+\begin{column}{0.6\onecolwid} % The first column within column 2 (column 2.1)
+
+Output:
+
+\begin{itemize}
+  \item Response to selection (change in mean genotypic value)
+  \item Change in genetic variance over generations
+  \item Allele frequency at each of 25 QTL (line width proportional to effect size)
+\end{itemize}
+
+
+\end{column}
+\end{columns}
+
+
+%% End of first column
+\end{column}
+
+
+
+
+
+
+%% The second column
+\begin{column}{\onecolwid}
+
+%% Insert an alert block
+
+% Set the color
+\setbeamercolor{block alerted title}{fg=white,bg=blueset1!70} % Change the alert block title colors
+\setbeamercolor{block alerted body}{fg=black,bg=blueset1!10} % Change the alert block body colors
+
+\vspace{-0.5cm}
+
+\begin{alertblock}{Intended Learning Outcomes}
+
+
+\begin{center}
+\begin{figure}
+  % \includegraphics[width=1\linewidth]{figures/learning_outcomes.jpg}
+\end{figure}
+\end{center}
+
+Concepts in quantitative and population genetics are covered by one or more modules and synthesized in distinct learning outcomes.
+
+
+
+% Space
+\vspace{0.5cm}
+
+
+\end{alertblock}
+
+% End of second column
+\end{column}
+
+
+%% End the two columns
+\end{columns}
+
+
+% End the results block
+\end{block}
+
+%----------------------------
+
+
+
+
+
+
+
+%% Add some space
+\vspace{0cm}
+
+
+%----------------------------------------------------------------------------------------
+
+
+
+
+% Split into three columns - one for each of these sections
+\begin{columns}[t,totalwidth=\twocolwid] % Split up the two columns wide column
+
+%----------------------------------------------------------------------------------------
+%	CONCLUSIONS
+%----------------------------------------------------------------------------------------
+
+\begin{column}{1\onecolwid}
+
+% Set the color
+\setbeamercolor{block alerted title}{fg=white,bg=orangeset1!70} % Change the alert block title colors
+\setbeamercolor{block alerted body}{fg=black,bg=orangeset1!10} % Change the alert block body colors
+
+\begin{alertblock}{Availability and Installation}
+
+\begin{footnotesize}
+
+The application is freely available as an \textit{R} package: \texttt{qgshiny}, which can be downloaded from the GitHub repository \textcolor{blue}{https://github.com/neyhartj/qgshiny}.
+
+\vspace{0.5cm}
+
+
+To install, use these command in \textit{R} (this text can be copied directly):
+
+
+\texttt{\# Install from GitHub using the \textit{devtools} package}  % \hfill  Email: \href{mailto:neyha001@umn.edu}{neyha001@umn.edu}
+
+\texttt{devtools::install\_github("neyhartj/qgshiny")}  % \hfill  Web: \href{http://smithlab.cfans.umn.edu/}{smithlab.cfans.umn.edu}
+
+\vspace{1cm}
+
+
+\textbf{*Contact Information}
+
+\begin{itemize}
+\item Email: \href{mailto:neyha001@umn.edu}{neyha001@umn.edu}
+\item Twitter: \href{https://twitter.com/neyhartje}{@neyhartje}
+\item Web: \href{http://smithlab.cfans.umn.edu/}{smithlab.cfans.umn.edu}
+\end{itemize}
+
+
+\end{footnotesize}
+
+
+\end{alertblock}
+
+
+\end{column}
+
+
+
+%----------------------------------------------------------------------------------------
+%	ACKNOWLEDGEMENTS
+%----------------------------------------------------------------------------------------
+
+\begin{column}{1\onecolwid} % The first column within column 2 (column 2.1)
+
+
+% Change the font of the block title for the next two sections
+% \setbeamerfont{block title}{size=\small}
+
+\begin{block}{\large{Acknowledgements}}
+
+\begin{footnotesize}
+
+We thank students in HORT/AGRO 4401 (Spring 2017) and AGRO 5021 (Fall 2017) for testing the application and providing feedback. Thanks also go to Kevin P. Smith for input and to James Anderson for providing class time to deploy the application.
+
+\end{footnotesize}
+
+\end{block}
+
+
+%----------------------------------------------------------------------------------------
+%	REFERENCES
+%----------------------------------------------------------------------------------------
+
+\begin{block}{\large{References}}
+
+% \nocite{*} % Insert publications even if they are not cited in the poster
+% ^ removed this so list only those publications that are cited
+
+% \setbeamercolor{
+
+\begin{tiny}
+
+\bibliographystyle{supporting_files/posterbibstyle}
+% \bibliography{\mendlibrary}
+
+
+\end{tiny}
+
+\end{block}
+
+% End the references column
+\end{column}
+
+% End the two-column format
+\end{columns}
+
+% %----------------------------------------------------------------------------------------
+% %	CONTACT INFORMATION
+% %----------------------------------------------------------------------------------------
+%
+% \setbeamercolor{block alerted title}{fg=white,bg=orangeset1!70} % Change the alert block title colors
+% \setbeamercolor{block alerted body}{fg=black,bg=orangeset1!10} % Change the alert block body colors
+%
+% \begin{alertblock}{\large{\textsuperscript{*}Contact Information}}
+%
+% \begin{itemize}
+% \item Email: \href{mailto:neyha001@umn.edu}{neyha001@umn.edu}
+% \item Twitter: \href{https://twitter.com/neyhartje}{@neyhartje}
+% \item Web: \href{http://smithlab.cfans.umn.edu/}{smithlab.cfans.umn.edu}
+% \end{itemize}
+%
+% \end{alertblock}
+
+
+%----------------------------------------------------------------------------------------
+
+\end{column} % End of the third column
+
+\end{columns} % End of all the columns in the poster
+
+\end{frame} % End of the enclosing frame
+
+\end{document}
