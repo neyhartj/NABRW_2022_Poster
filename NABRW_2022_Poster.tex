@@ -36,7 +36,7 @@
 
 
 %% Define the paths to the Mendeley library
-% \newcommand\mendlibrary{C:/Users/jeffrey.neyhart/Documents/Literature/MendeleyLibrary/library}
+\newcommand\mendlibrary{C:/Users/jeffrey.neyhart/Documents/Literature/MendeleyLibrary/library}
 
 
 
@@ -89,8 +89,8 @@
 \newlength{\threecolwid}
 
 %% Poster size
-\setlength{\paperwidth}{44in} % A0 width: 46.8in
-\setlength{\paperheight}{44in} % A0 height: 33.1in
+\setlength{\paperwidth}{33in} % A0 width: 46.8in
+\setlength{\paperheight}{46in} % A0 height: 33.1in
 
 
 \setlength{\sepwid}{0.024\paperwidth} % Separation width (white space) between columns
@@ -108,14 +108,17 @@
 %	TITLE SECTION
 %----------------------------------------------------------------------------------------
 
-\title{An Active Learning Application for Quantitative \\ Genetics Instruction Using \textit{R} and \textit{shiny}} % Poster title
+\title{Poster Title Here} % Poster title
 % Add \\ to induce new line
 
 \vspace{1cm}
 
-\author{Jeffrey L. Neyhart\textsuperscript{1*} and Eric Watkins\textsuperscript{2}} % Author(s)
+\author{ Jeffrey L. Neyhart\textsuperscript{1*}, Author 2\textsuperscript{2}, Author 3\textsuperscript{1} } % Author(s)
 
-\institute{\textsuperscript{1}Department of Agronomy and Plant Genetics, and \textsuperscript{2}Department of Horticultural Science, University of Minnesota}
+\institute{ \textsuperscript{1}Affiliate1, \textsuperscript{2}Affiliate2 }
+
+% *Contact: Email - \href{mailto:jeffrey.neyhart@usda.gov}{jeffrey.neyhart@usda.gov}
+
 
 %----------------------------------------------------------------------------------------
 
@@ -148,13 +151,16 @@
 
 \begin{alertblock}{\Large{Takeaways}}
 
+% \begin{large}
 \begin{itemize}
-  \item \textbf{We developed an active learning application for instruction in introductory quantitative and population genetics.}
+  \item \textbf{Takeaways1}
   \vspace{0.5cm}
-  \item \textbf{Common topics in plant breeding courses are covered in three modules.}
+  \item \textbf{Takeaways2}
   \vspace{0.5cm}
-  \item \textbf{The application relies on \textit{R} and has a graphical user interface built using the package \textit{shiny}. The software is freely available, modular, and expandable.}
+  \item \textbf{Takeaways3}
 \end{itemize}
+% \end{large}
+
 
 \end{alertblock}
 
@@ -166,116 +172,122 @@
 
 
 %% Text
-An introduction to quantitative and population genetics is fundamental in plant breeding courses; however, these subjects rely heavily on theory and statistics, which may not be readily understood by all students.
+Text
 
-\vspace{1cm}
+\vspace{0.5cm}
 
-Active learning can help improve comprehension of such material \cite{Freeman2014} through the use of games or simulations \cite{Bernardo2017a, McKeachie2006}.
+Text2
 
-\vspace{1cm}
+\vspace{0.5cm}
 
-The programming language \textit{R} is very useful for analysis and simulations in quantitative and population genetics, and the \textit{shiny} \cite{Chang2017} package provides tools for constructing web applications that can deploy \textit{R} functions.
+Text3
 
-\vspace{1cm}
+\vspace{0.5cm}
 
-During an introductory undergraduate course in plant breeding, we developed a \textit{shiny} application (Shiny App) as an active-learning tool to augment traditional lecture-based instruction.
+Text4
+
+\vspace{0.5cm}
+
+\textbf{Objective:} Objective
+
 
 \end{block}
 
+\vspace{2cm}
+
 
 % %----------------------------------------------------------------------------------------
-% %	OBJECTIVES
+% %	OBJECTIVES OR QUESTIONS
 % %----------------------------------------------------------------------------------------
 %
 % % Set the color
 % \setbeamercolor{block alerted title}{fg=white,bg=blueset1!70} % Change the alert block title colors
 % \setbeamercolor{block alerted body}{fg=black,bg=blueset1!10} % Change the alert block body colors
 %
-% \begin{alertblock}{\large{Objectives}}
-%
-% \begin{footnotesize}
+% \begin{alertblock}{\large{Objective}}
 %
 % \begin{itemize}
-%   \item Identify markers and genomic regions of elevated plasticity and stability
-%   \item Compare gene annotation frequency in these genomic regions
-%   \item Assess the impact to genomewide prediction accuracy of using markers with highly plastic or stable effects
+%   \item{\textbf{Identify genomic regions associated with local environmental factors in wild cranberry populations.}}
+%   % \item{\textbf{Determine candidate abiotic stress tolerance loci as potential selection targets.}}
+%   % \item \textbf{What genomic regions are associated with local environmental conditions in wild cranberry?}
+%   % \item What is the frequency and occurrance of putatively adaptive loci in native cranberry selections?
 % \end{itemize}
-%
-% \end{footnotesize}
-%
 %
 %
 % \end{alertblock}
-
-
 
 
 %----------------------------------------------------------------------------------------
 %	MATERIALS AND MATERIALS
 %----------------------------------------------------------------------------------------
 
-\begin{block}{Application Development}
+\begin{block}{Materials and Methods}
+
+We used a collection of 111 wild cranberry individuals sampled from 17 locations (populations) between 1991 and 2000.
 
 
-%% Application structure
-\textbf{Application Structure}
-
-\vspace{0.5cm}
-
-\begin{center}
+% Figure with sampling locations
 \begin{figure}
-  % \includegraphics[width=1\linewidth]{figures/app_demo.png}
+  \begin{center}
+    % \includegraphics[width=0.75\linewidth]{figures/figure2.jpg}
+  \end{center}
 \end{figure}
-\end{center}
-
-\vspace{0.5cm}
-
-A Shiny App is built on two \textit{R} scripts:
-
-\begin{itemize}
-  \item \texttt{server.R} - performs simulations, operations, and generates plots.
-  \item \texttt{ui.R} - specifies the user interface, including layout, color scheme, and Java/HTML settings.
-\end{itemize}
 
 \vspace{1cm}
 
-Each module contains: 1) a sidebar with brief directions and widgets for controlling user input; and 2) an output area for plots and tables.
+Text
 
 \vspace{1cm}
 
-The advantage of a Shiny App is its ease-of-use: no knowledge of \textit{R} is necessary, but students can explore further to understand the underlying code.
+Text
 
 
+\begin{table}[!h]
+\centering
+\begin{tabular}{lcl}
+\toprule
+\textbf{Category} & \textbf{$N_{Variable}$} & \textbf{Example Variables}\\
+\midrule
+Geography & 3 & Elevation, Latitude, Longitude\\
+Temperature & 11 & Annual Mean Temperature, Mean Diurnal
+Range\\
+Precipitation & 8 & Annual Precipitation, Precipitation of
+Wettest Month\\
+Soil & 20 & Bulk Density Subsoil, pH Topsoil, \% Sand topsoil\\
+\bottomrule
+\end{tabular}
+\end{table}
 
-\vspace{1cm}
+\vspace{2cm}
 
-%% Assumptions
-\textbf{Assumptions}
+Text
 
-\vspace{0.5cm}
+% \begin{center}
+% \begin{Large}
+% $ \mathbf{y = Sa + Xb + Zu + e} $
+% \end{Large}
+% \end{center}
 
-Most assumptions follow the basic theory in quantitative and population genetics that is often taught in plant breeding courses \cite{Bernardo2010, Acquaah2012}
-
-\begin{itemize}
-  \item All quantitative trait loci (QTL) influencing a trait are unlinked.
-  \item Populations are composed of randomly mating diploid individuals.
-  \item There is no mutation or migration.
-  \item Non-genetic effects are normally-distributed.
-\end{itemize}
-
-
-\vspace{1cm}
-
-
+% Figure with sampling locations
+\begin{figure}
+  \begin{center}
+    % \includegraphics[width=0.9\linewidth]{figures/eaa_model1.jpg}
+  \end{center}
+\end{figure}
 
 
 % End the M&M block
 \end{block}
 
 
+
 %----------------------------------------------------------------------------------------
 
 \end{column} % End of the first column (i.e. Introduction, objectives, and methods)
+
+%----------------------------------------------------------------------------------------
+
+% Begin the results columns
 
 \begin{column}{\sepwid}\end{column} % Empty spacer column
 
@@ -291,7 +303,7 @@ Most assumptions follow the basic theory in quantitative and population genetics
 %	RESULTS
 %----------------------------------------------------------------------------------------
 
-\begin{block}{Modules}
+\begin{block}{Results}
 
 % Now split into two columns
 \begin{columns}[t,totalwidth=\twocolwid] % Split up the two columns wide column
@@ -301,47 +313,48 @@ Most assumptions follow the basic theory in quantitative and population genetics
 
 %----------------------------------------------------------------------------------------
 
-%% Figure of the first module
-
-\textit{Module 1: Randomly Mating Populations}
+%% Figure of the first example
 
 \vspace{0.5cm}
 
+%% Figure 3a
+
+\begin{center}
+\textbf{Text}
+\end{center}
+
 \begin{center}
 \begin{figure}
-  % \includegraphics[width=1\linewidth]{figures/Figure1.png}
+  % \includegraphics[width=1\linewidth]{figures/Figure3a.jpg}
 \end{figure}
 \end{center}
 
-% Remove some vertical space
-\vspace{-1cm}
-
-% Now split into two columns
-\begin{columns}[t,totalwidth=\onecolwid] % Split up the two columns wide column
-
-\begin{column}{0.4\onecolwid} % The first column within column 2 (column 2.1)
-
-User-adjusted parameters:
-
-\begin{itemize}
-  \item Starting allele frequency
-  \item Population size
-  \item Number of generations
-\end{itemize}
-
-\end{column}
-\begin{column}{0.6\onecolwid} % The first column within column 2 (column 2.1)
-
-Output:
-
-\begin{itemize}
-  \item Frequency of a single allele in a randomly mating population
-  \item Generation of allele fixation (if applicable)
-\end{itemize}
+\vspace{2cm}
 
 
-\end{column}
-\end{columns}
+The \textbf{A} Text
+
+%% Figure 3b
+
+\begin{center}
+\begin{figure}
+  % \includegraphics[width=1\linewidth]{figures/Figure3b.jpg}
+\end{figure}
+\end{center}
+
+
+\vspace{2cm}
+
+
+Text
+
+%% Figure 3c
+
+\begin{center}
+\begin{figure}
+  % \includegraphics[width=1\linewidth]{figures/Figure3c.jpg}
+\end{figure}
+\end{center}
 
 
 
@@ -353,52 +366,77 @@ Output:
 
 %----------------------------------------------------------------------------------------
 
-
-%% Figure of the second module
-
-\textit{Module 2: Genetic Variance}
+%% Figure 4
 
 \vspace{0.5cm}
 
+
+\begin{center}
+\textbf{Text}
+\end{center}
+
+
+Text
+
+
+%% Figure 4a
 \begin{center}
 \begin{figure}
-  % \includegraphics[width=1\linewidth]{figures/Figure2.png}
+  % \includegraphics[width=1\linewidth]{figures/Figure4a.jpg}
 \end{figure}
 \end{center}
 
-% Vertically adjust text for the different sizes of the figures
-\vspace{45.46271px}
+% Add some space
+\vspace{1cm}
 
-% Remove some vertical space
-\vspace{-1cm}
+%% Figure 4b
+\begin{center}
+\begin{figure}
+  % \includegraphics[width=1\linewidth]{figures/Figure4b.jpg}
+\end{figure}
+\end{center}
 
-% Now split into two columns
-\begin{columns}[t,totalwidth=\onecolwid] % Split up the two columns wide column
 
-\begin{column}{0.4\onecolwid} % The first column within column 2 (column 2.1)
 
-User-adjusted parameters:
+\vspace{3cm}
+
+Text
+
+
+%% Figure 5a
+\begin{center}
+\begin{figure}
+  % \includegraphics[width=1\linewidth]{figures/Figure5a.jpg}
+\end{figure}
+\end{center}
+
+% Add some space
+\vspace{1cm}
+
+%% Figure 5b
+\begin{center}
+\begin{figure}
+  % \includegraphics[width=1\linewidth]{figures/Figure5b.jpg}
+\end{figure}
+\end{center}
+
+
+
+%% Add some space
+\vspace{2cm}
+
+
+
+%% Figure of the second module
+\begin{alertblock}{Summary}
 
 \begin{itemize}
-  \item Allele frequency
-  \item Additive effect
-  \item Dominance effect
+  \item{Text}
+  \item{Text}
+  \item{Text}
 \end{itemize}
 
-\end{column}
-\begin{column}{0.6\onecolwid} % The first column within column 2 (column 2.1)
-
-Output:
-
-\begin{itemize}
-  \item Level of additive variance ($V_A$, red), dominance variance ($V_D$, blue), and total genetic variance ($V_G$, black)
-\end{itemize}
-
-
-\end{column}
-\end{columns}
-
-
+\end{alertblock}
 
 
 %----------------------------------------------------------------------------------------
@@ -445,114 +483,6 @@ Output:
 
 
 
-
-
-%% Add some space
-\vspace{2cm}
-
-%-------------------------------
-%% Split the section into three columns
-\begin{columns}[t,totalwidth=\twocolwid]
-
-%% Three columns will exist in this space - each of 2/3 * onecolwidth
-
-
-%% The first column
-\begin{column}{\onecolwid}
-% \begin{column}{\onecolwid}
-
-%% Figure of the third module
-
-\textit{Module 3: Response to Selection}
-
-\vspace{0.5cm}
-
-\begin{center}
-\begin{figure}
-  % \includegraphics[width=1\linewidth]{figures/Figure3.png}
-\end{figure}
-\end{center}
-
-
-% Remove some vertical space
-\vspace{-1cm}
-
-% Now split into two columns
-\begin{columns}[t,totalwidth=\onecolwid] % Split up the two columns wide column
-
-\begin{column}{0.4\onecolwid} % The first column within column 2 (column 2.1)
-
-User-adjusted parameters:
-
-\begin{itemize}
-  \item Allele frequencies
-  \item Heritability
-  \item Selection intensity
-  \item Population size
-\end{itemize}
-
-\end{column}
-\begin{column}{0.6\onecolwid} % The first column within column 2 (column 2.1)
-
-Output:
-
-\begin{itemize}
-  \item Response to selection (change in mean genotypic value)
-  \item Change in genetic variance over generations
-  \item Allele frequency at each of 25 QTL (line width proportional to effect size)
-\end{itemize}
-
-
-\end{column}
-\end{columns}
-
-
-%% End of first column
-\end{column}
-
-
-
-
-
-
-%% The second column
-\begin{column}{\onecolwid}
-
-%% Insert an alert block
-
-% Set the color
-\setbeamercolor{block alerted title}{fg=white,bg=blueset1!70} % Change the alert block title colors
-\setbeamercolor{block alerted body}{fg=black,bg=blueset1!10} % Change the alert block body colors
-
-\vspace{-0.5cm}
-
-\begin{alertblock}{Intended Learning Outcomes}
-
-
-\begin{center}
-\begin{figure}
-  % \includegraphics[width=1\linewidth]{figures/learning_outcomes.jpg}
-\end{figure}
-\end{center}
-
-Concepts in quantitative and population genetics are covered by one or more modules and synthesized in distinct learning outcomes.
-
-
-
-% Space
-\vspace{0.5cm}
-
-
-\end{alertblock}
-
-% End of second column
-\end{column}
-
-
-%% End the two columns
-\end{columns}
-
-
 % End the results block
 \end{block}
 
@@ -560,24 +490,18 @@ Concepts in quantitative and population genetics are covered by one or more modu
 
 
 
-
-
-
-
 %% Add some space
 \vspace{0cm}
 
 
+
 %----------------------------------------------------------------------------------------
-
-
-
-
-% Split into three columns - one for each of these sections
+% Split into columns
 \begin{columns}[t,totalwidth=\twocolwid] % Split up the two columns wide column
+%----------------------------------------------------------------------------------------
 
 %----------------------------------------------------------------------------------------
-%	CONCLUSIONS
+%	DISCUSSION/CONCLUSIONS
 %----------------------------------------------------------------------------------------
 
 \begin{column}{1\onecolwid}
@@ -586,35 +510,16 @@ Concepts in quantitative and population genetics are covered by one or more modu
 \setbeamercolor{block alerted title}{fg=white,bg=orangeset1!70} % Change the alert block title colors
 \setbeamercolor{block alerted body}{fg=black,bg=orangeset1!10} % Change the alert block body colors
 
-\begin{alertblock}{Availability and Installation}
+\begin{alertblock}{Implications}
 
-\begin{footnotesize}
-
-The application is freely available as an \textit{R} package: \texttt{qgshiny}, which can be downloaded from the GitHub repository \textcolor{blue}{https://github.com/neyhartj/qgshiny}.
-
-\vspace{0.5cm}
-
-
-To install, use these command in \textit{R} (this text can be copied directly):
-
-
-\texttt{\# Install from GitHub using the \textit{devtools} package}  % \hfill  Email: \href{mailto:neyha001@umn.edu}{neyha001@umn.edu}
-
-\texttt{devtools::install\_github("neyhartj/qgshiny")}  % \hfill  Web: \href{http://smithlab.cfans.umn.edu/}{smithlab.cfans.umn.edu}
-
-\vspace{1cm}
-
-
-\textbf{*Contact Information}
-
+\begin{large}
 \begin{itemize}
-\item Email: \href{mailto:neyha001@umn.edu}{neyha001@umn.edu}
-\item Twitter: \href{https://twitter.com/neyhartje}{@neyhartje}
-\item Web: \href{http://smithlab.cfans.umn.edu/}{smithlab.cfans.umn.edu}
+  \item{Text}
+  \item{Text}
+  \item{Text}
 \end{itemize}
+\end{large}
 
-
-\end{footnotesize}
 
 
 \end{alertblock}
@@ -625,10 +530,16 @@ To install, use these command in \textit{R} (this text can be copied directly):
 
 
 %----------------------------------------------------------------------------------------
+
+%% Open an Acknowledgements/Reference column
+
+\begin{column}{1\onecolwid}
+
+
+
+%----------------------------------------------------------------------------------------
 %	ACKNOWLEDGEMENTS
 %----------------------------------------------------------------------------------------
-
-\begin{column}{1\onecolwid} % The first column within column 2 (column 2.1)
 
 
 % Change the font of the block title for the next two sections
@@ -638,7 +549,7 @@ To install, use these command in \textit{R} (this text can be copied directly):
 
 \begin{footnotesize}
 
-We thank students in HORT/AGRO 4401 (Spring 2017) and AGRO 5021 (Fall 2017) for testing the application and providing feedback. Thanks also go to Kevin P. Smith for input and to James Anderson for providing class time to deploy the application.
+Text
 
 \end{footnotesize}
 
@@ -659,18 +570,14 @@ We thank students in HORT/AGRO 4401 (Spring 2017) and AGRO 5021 (Fall 2017) for 
 \begin{tiny}
 
 \bibliographystyle{supporting_files/posterbibstyle}
-% \bibliography{\mendlibrary}
+\bibliography{\mendlibrary}
 
 
 \end{tiny}
 
+% End the reference block
 \end{block}
 
-% End the references column
-\end{column}
-
-% End the two-column format
-\end{columns}
 
 % %----------------------------------------------------------------------------------------
 % %	CONTACT INFORMATION
@@ -691,11 +598,24 @@ We thank students in HORT/AGRO 4401 (Spring 2017) and AGRO 5021 (Fall 2017) for 
 
 
 %----------------------------------------------------------------------------------------
+% End the acknowlegements/references column
+\end{column}
+%----------------------------------------------------------------------------------------
 
+%----------------------------------------------------------------------------------------
+% End the two bottom columns
+\end{columns}
+%----------------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+% End the second main column
 \end{column} % End of the third column
+%----------------------------------------------------------------------------------------
+
+
 
 \end{columns} % End of all the columns in the poster
 
 \end{frame} % End of the enclosing frame
 
-\end{document}
+\end{document} % End the poster document
