@@ -7,6 +7,7 @@
 % Modified by Nathaniel Johnston (nathaniel@nathanieljohnston.com) in August 2009
 % =============================================================================
 
+
 \ProvidesPackage{beamerthemeconfposter}
 \RequirePackage{tikz}		% for drawing the nice rounded boxes
 \usetikzlibrary{arrows,backgrounds}
@@ -211,7 +212,7 @@
 \setbeamertemplate{headline}{
  \leavevmode
   \begin{columns}[c]
-   \begin{column}{0.87\linewidth}
+   \begin{column}{0.8\linewidth}
     \vskip1cm
     \begin{flushleft}
     \usebeamercolor{title in headline}{\color{jblue}\Huge{\textbf{\inserttitle}}\\[0.5ex]}
@@ -223,7 +224,7 @@
 
    %% Logo column
    \begin{column}{0.13\linewidth}
-      % \includegraphics[height=7cm]{C:/Users/jln54/GoogleDrive/BarleyLab/ForKevin/Resources//umn_logo.png}
+      \includegraphics[height=7cm]{\logopath}
    \end{column}
 
    \vspace{1cm}

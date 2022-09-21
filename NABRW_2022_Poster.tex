@@ -22,6 +22,16 @@
 %	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
 %----------------------------------------------------------------------------------------
 
+%% Path to affiliate logos
+%%
+%% NOTE: THIS MUST BE INCLUDED BEFORE THE MENTION OF confposter
+\newcommand\logopath{C:/Users/jeffrey.neyhart/OneDrive - USDA/Documents/CranberryLab/Jeff/PostersPresentations/OtherPresentationsSlides/PresentationResources/USDA_Logos/USDALOGO-RGB.png}
+
+
+%% Define the paths to the Mendeley library
+\newcommand\mendlibrary{C:/Users/jeffrey.neyhart/Documents/Literature/MendeleyLibrary/library}
+
+
 \documentclass[final]{beamer}
 
 % Use the beamerposter package for laying out the poster
@@ -34,10 +44,7 @@
 
 \usepackage[super,numbers]{natbib} % Use for fine-tunning the captions
 
-
-%% Define the paths to the Mendeley library
-\newcommand\mendlibrary{C:/Users/jeffrey.neyhart/Documents/Literature/MendeleyLibrary/library}
-
+\usepackage{tabu}
 
 
 %% Configure code blocks
@@ -97,25 +104,33 @@
 \setlength{\onecolwid}{0.3013333\paperwidth} % Width of one column
 \setlength{\twocolwid}{0.6266666\paperwidth} % Width of two columns
 \setlength{\threecolwid}{0.9279999\paperwidth} % Width of three columns
-\setlength{\topmargin}{-0.5in} % Reduce the top margin size
+\setlength{\topmargin}{-1in} % Reduce the top margin size
 %-----------------------------------------------------------
 
 \usepackage{graphicx}  % Required for including images
 
 \usepackage{booktabs} % Top and bottom rules for tables
 
+\usepackage{array}
+
 %----------------------------------------------------------------------------------------
 %	TITLE SECTION
 %----------------------------------------------------------------------------------------
 
-\title{Poster Title Here} % Poster title
+\title{Location, location, location: Identifying precise, repeatable, and representative real estate for barley uniform nurseries} % Poster title
 % Add \\ to induce new line
 
 \vspace{1cm}
 
-\author{ Jeffrey L. Neyhart\textsuperscript{1*}, Author 2\textsuperscript{2}, Author 3\textsuperscript{1} } % Author(s)
+% Author(s)
+\author{ Jeffrey L. Neyhart\textsuperscript{1,2*}, Lucia Gutierrez\textsuperscript{3}, and Kevin P. Smith\textsuperscript{2} }
 
-\institute{ \textsuperscript{1}Affiliate1, \textsuperscript{2}Affiliate2 }
+% Affiliations
+\institute{
+  \textsuperscript{1}USDA-ARS, Plant Science Research Unit, St. Paul, MN.;
+  \textsuperscript{2}Dept. of Agronomy and Plant Genetics, Univ. of Minnesota, St. Paul, MN.;
+  \textsuperscript{3}Dept. of Agronomy, Univ. of Wisconsin-Madison, Madison, WI.
+}
 
 % *Contact: Email - \href{mailto:jeffrey.neyhart@usda.gov}{jeffrey.neyhart@usda.gov}
 
@@ -153,11 +168,11 @@
 
 % \begin{large}
 \begin{itemize}
-  \item \textbf{Takeaways1}
+  \item \textbf{Not all locations in uniform nurseries are ideal for phenotyping all traits}
   \vspace{0.5cm}
-  \item \textbf{Takeaways2}
+  \item \textbf{We developed an optimization method to select the best locations for phenotyping}
   \vspace{0.5cm}
-  \item \textbf{Takeaways3}
+  \item \textbf{Compared to all locations, optimization maintained or increased phenotype data quality while reducing costs}
 \end{itemize}
 % \end{large}
 
@@ -170,30 +185,32 @@
 
 \begin{block}{Introduction}
 
-
-%% Text
-Text
+Breeding programs test genotypes performance in costly multi-location trials
 
 \vspace{0.5cm}
 
-Text2
+Test locations can be evaluated using three criteria\cite{Yan2011}:
+\begin{itemize}
+  \item \textbf{Precision}: the power to discriminate genotypes
+  \item \textbf{Repeatability}: the consistency of genotype performance
+  \item \textbf{Representativeness}: the similarity of a location to a mega-environment
+\end{itemize}
 
 \vspace{0.5cm}
 
-Text3
+Can we improve the efficiency of regional nurseries by determining the best locations for phenotyping?
 
 \vspace{0.5cm}
 
-Text4
-
-\vspace{0.5cm}
-
-\textbf{Objective:} Objective
+\textbf{Objectives:}
+\begin{itemize}
+  \item Compare test location precision, repeatability, and representativeness in two regional barley nurseries
+  \item Determine optimized test locations for phenotyping multiple agronomic and malting quality traits
+\end{itemize}
 
 
 \end{block}
 
-\vspace{2cm}
 
 
 % %----------------------------------------------------------------------------------------
@@ -217,63 +234,59 @@ Text4
 % \end{alertblock}
 
 
+% \vspace{1cm}
+
+
 %----------------------------------------------------------------------------------------
 %	MATERIALS AND MATERIALS
 %----------------------------------------------------------------------------------------
 
 \begin{block}{Materials and Methods}
 
-We used a collection of 111 wild cranberry individuals sampled from 17 locations (populations) between 1991 and 2000.
-
+We used data from the Mississippi Valley (MVN) and Western Regional (WRN) uniform nurseries
 
 % Figure with sampling locations
 \begin{figure}
   \begin{center}
-    % \includegraphics[width=0.75\linewidth]{figures/figure2.jpg}
+    \includegraphics[width=0.90\linewidth]{figures/nursery_location_map.png}
+    % \caption{Locations in the MVN, WRN, or both nurseries.}
   \end{center}
 \end{figure}
 
-\vspace{1cm}
+\begin{footnotesize}
 
-Text
-
-\vspace{1cm}
-
-Text
-
-
-\begin{table}[!h]
+%% Table of parameters
+\begin{table}[H]
 \centering
-\begin{tabular}{lcl}
+\begin{tabular}{>{\raggedright\arraybackslash}p{5in}>{\centering\arraybackslash}p{2in}>{\centering\arraybackslash}p{2in}}
 \toprule
-\textbf{Category} & \textbf{$N_{Variable}$} & \textbf{Example Variables}\\
+% \textbf{Parameter} & \textbf{Mississippi Valley Nursery} & \textbf{Western Regional Nursery}\\
+\textbf{Parameter} & \textbf{MVN} & \textbf{WRN}\\
 \midrule
-Geography & 3 & Elevation, Latitude, Longitude\\
-Temperature & 11 & Annual Mean Temperature, Mean Diurnal
-Range\\
-Precipitation & 8 & Annual Precipitation, Precipitation of
-Wettest Month\\
-Soil & 20 & Bulk Density Subsoil, pH Topsoil, \% Sand topsoil\\
+Locations & 20 & 32\\
+Years & 25 & 23\\
+Environments (Loc.-Yr.) & 175 & 251\\
+Genotypes & 401 & 393\\
+Traits & 19 & 18\\
 \bottomrule
 \end{tabular}
 \end{table}
 
-\vspace{2cm}
+\end{footnotesize}
 
-Text
 
-% \begin{center}
-% \begin{Large}
-% $ \mathbf{y = Sa + Xb + Zu + e} $
-% \end{Large}
-% \end{center}
 
-% Figure with sampling locations
-\begin{figure}
-  \begin{center}
-    % \includegraphics[width=0.9\linewidth]{figures/eaa_model1.jpg}
-  \end{center}
-\end{figure}
+\vspace{1cm}
+
+Three statistics were estimated per location:
+\begin{itemize}
+  \item \textbf{Precision} - variance of a genotype mean ($V_{\bar{Y}}$)\cite{Bernardo2010} (lower $V_{\bar{Y}}$ means more precise)
+  \item \textbf{Repeatability} - genetic correlation ($\rho_G$) across years (higher $\rho_G$ means more repeatable)
+  \item \textbf{Representativeness} - $\rho_G$ between a location and a mega-environment (higher $\rho_G$ means more representative)
+\end{itemize}
+
+We defined an optimization algorithm to select locations that maximized these statistics for multiple traits
+
 
 
 % End the M&M block
@@ -305,145 +318,192 @@ Text
 
 \begin{block}{Results}
 
-% Now split into two columns
+
+%----------------------------------------------------------------------------------------
+
+% \vspace{0.5cm}
+%
+% %% Single column for now
+% % One column
+% \begin{columns}[t,totalwidth=\twocolwid] % Split up the two columns wide column
+%
+% % A single column
+% \begin{column}{\twocolwid}
+%
+%
+% % Figure 2
+%
+% \begin{center}
+%   \begin{figure}
+%     \includegraphics[width=1\linewidth]{figures/figure2.png}
+%     \caption{A figure!}
+%   \end{figure}
+% \end{center}
+%
+%
+% % End the column
+% \end{column}
+%
+% % End of column split
+% \end{columns}
+%
+
+
+
+
+%----------------------------------------------------------------------------------------
+
+\vspace{0.5cm}
+
+%% Columns for figure 3
+
+
+%% Split into two columns
 \begin{columns}[t,totalwidth=\twocolwid] % Split up the two columns wide column
 
 
-\begin{column}{\onecolwid} % The first column within column 2 (column 2.1)
+% Second column
+\begin{column}{0.75\twocolwid}
+
+% Figure 3
+\begin{center}
+  \begin{figure}
+    \includegraphics[width=0.95\linewidth]{figures/figure3.jpg}
+    % \caption{A figure!}
+  \end{figure}
+\end{center}
+
+\end{column}
+
+
+% First column
+\begin{column}{0.23\twocolwid}
+
+The best test locations are denoted by \textbf{larger points in the upper-right corner} of each plot
+% \begin{itemize}
+%   \item Precision (\textit{x}-axis; increases left-to-right)
+%   \item Repeatability (\textit{y}-axis; increases bottom-to-top)
+%   \item Representativeness (point size; increases with larger points)
+% \end{itemize}
+
+\vspace{1cm}
+
+
+Some locations are ideal for multiple traits: BTT (Bottineau, ND); PLL (Pullman, WA)
+
+\vspace{1cm}
+
+For other locations, only some traits are reliably phenotyped: MRR (Morris, MN); ABR (Aberdeen, ID)
+
+\vspace{1cm}
+
+\textbf{Most test locations are not ideal for phenotyping all traits}
+
+\end{column}
+
+
+% First column
+\begin{column}{0.02\twocolwid}
+\end{column}
+
+\end{columns}
+
+\vspace{4cm}
 
 %----------------------------------------------------------------------------------------
 
-%% Figure of the first example
+
+
+%% Columns for figure 4
+
+%% Split into two columns
+\begin{columns}[t,totalwidth=\twocolwid] % Split up the two columns wide column
+
+% First column
+\begin{column}{0.48\twocolwid}
+
+
+% Figure 4
+\begin{center}
+  \begin{figure}
+    \includegraphics[width=0.75\linewidth]{figures/figure4a.jpg}
+    % \caption{A figure!}
+  \end{figure}
+\end{center}
+
+\textbf{Fewer, optimized locations led to similar or better phenotype data quality compared to all or random sets of locations}
 
 \vspace{0.5cm}
 
-%% Figure 3a
 
+
+
+\end{column}
+
+% Spacer
+\begin{column}{0.02\twocolwid}
+\end{column}
+
+
+% Second column
+\begin{column}{0.48\twocolwid}
+
+% Figure 5
 \begin{center}
-\textbf{Text}
-\end{center}
-
-\begin{center}
-\begin{figure}
-  % \includegraphics[width=1\linewidth]{figures/Figure3a.jpg}
-\end{figure}
-\end{center}
-
-\vspace{2cm}
-
-
-The \textbf{A} Text
-
-%% Figure 3b
-
-\begin{center}
-\begin{figure}
-  % \includegraphics[width=1\linewidth]{figures/Figure3b.jpg}
-\end{figure}
+  \begin{figure}
+    \includegraphics[width=0.85\linewidth]{figures/figure5.jpg}
+    % \caption{A figure!}
+  \end{figure}
 \end{center}
 
 
-\vspace{2cm}
-
-
-Text
-
-%% Figure 3c
-
-\begin{center}
-\begin{figure}
-  % \includegraphics[width=1\linewidth]{figures/Figure3c.jpg}
-\end{figure}
-\end{center}
-
-
-
-%----------------------------------------------------------------------------------------
-
-\end{column} % End of column 2.1
-
-\begin{column}{\onecolwid} % The second column within column 2 (column 2.2)
-
-%----------------------------------------------------------------------------------------
-
-%% Figure 4
-
-\vspace{0.5cm}
-
-
-\begin{center}
-\textbf{Text}
-\end{center}
-
-
-Text
-
-
-%% Figure 4a
-\begin{center}
-\begin{figure}
-  % \includegraphics[width=1\linewidth]{figures/Figure4a.jpg}
-\end{figure}
-\end{center}
-
-% Add some space
 \vspace{1cm}
 
-%% Figure 4b
-\begin{center}
-\begin{figure}
-  % \includegraphics[width=1\linewidth]{figures/Figure4b.jpg}
-\end{figure}
-\end{center}
+
+\begingroup\fontsize{22}{24}\selectfont
+
+\begin{tabu} to \linewidth {>{\raggedright}X>{\centering}X>{\centering}X>{\centering}X>{\centering}X>{\centering}X}
+\toprule
+\multicolumn{1}{c}{ } & \multicolumn{1}{c}{ } & \multicolumn{1}{c}{ } & \multicolumn{3}{c}{\textbf{\% Improvement Vs. All Locations}} \\
+\cmidrule(l{3pt}r{3pt}){4-6}
+\textbf{Nursery} & \textbf{Selected Agro. Trait Loc.} & \textbf{Selected Malt Qual. Trait Loc.} & \textbf{Precision} & \textbf{Repeat-ability} & \textbf{Represent-ativeness}\\
+\midrule
+MVN & 5 & 2 & -7.48 & 33.3 & 15.0\\
+WRN & 5 & 3 & 2.98 & 16.0 & 8.05\\
+\bottomrule
+\end{tabu}
+\endgroup{}
 
 
-
-\vspace{3cm}
-
-Text
-
-
-%% Figure 5a
-\begin{center}
-\begin{figure}
-  % \includegraphics[width=1\linewidth]{figures/Figure5a.jpg}
-\end{figure}
-\end{center}
-
-% Add some space
 \vspace{1cm}
 
-%% Figure 5b
-\begin{center}
-\begin{figure}
-  % \includegraphics[width=1\linewidth]{figures/Figure5b.jpg}
-\end{figure}
-\end{center}
+\textbf{Optimization generally increased phenotype data quality while reducing the number of locations by 50-75\%}
+
+
+\vspace{1cm}
+
+
+% %% Figure of the second module
+% \begin{alertblock}{Implications}
+%
+% \begin{itemize}
+%   \item{Text}
+%   \item{Text}
+%   \item{Text}
+% \end{itemize}
+%
+% \end{alertblock}
+
+\end{column}
+
+% Spacer
+\begin{column}{0.02\twocolwid}
+\end{column}
 
 
 
-%% Add some space
-\vspace{2cm}
+\end{columns}
 
-
-
-%% Figure of the second module
-\begin{alertblock}{Summary}
-
-\begin{itemize}
-  \item{Text}
-  \item{Text}
-  \item{Text}
-\end{itemize}
-
-\end{alertblock}
-
-
-%----------------------------------------------------------------------------------------
-
-\end{column} % End of column 2.2
-
-\end{columns} % End of the split of column 2
 
 
 %-------------------------------
@@ -482,17 +542,14 @@ Text
 %--------------------------------
 
 
-
 % End the results block
 \end{block}
 
 %----------------------------
 
 
-
 %% Add some space
-\vspace{0cm}
-
+\vspace{2cm}
 
 
 %----------------------------------------------------------------------------------------
@@ -504,22 +561,72 @@ Text
 %	DISCUSSION/CONCLUSIONS
 %----------------------------------------------------------------------------------------
 
-\begin{column}{1\onecolwid}
+\begin{column}{0.48\twocolwid}
 
 % Set the color
 \setbeamercolor{block alerted title}{fg=white,bg=orangeset1!70} % Change the alert block title colors
 \setbeamercolor{block alerted body}{fg=black,bg=orangeset1!10} % Change the alert block body colors
 
-\begin{alertblock}{Implications}
+\begin{alertblock}{Read more / reach out}
 
-\begin{large}
+\begin{minipage}{0.3\linewidth}
+\begin{figure}[H]
+  \includegraphics[width=1\linewidth]{figures/cs_qr_code.png}
+\end{figure}
+\end{minipage} \hfill
+\begin{minipage}{0.7\linewidth}
+Read our paper in \textit{Crop Science}
+\end{minipage}
+
+
+\textbf{Contact:}
 \begin{itemize}
-  \item{Text}
-  \item{Text}
-  \item{Text}
+  \item Email: jeffrey.neyhart@usda.gov
+  \item LinkedIn: linkedin.com/in/jeffneyhart
+  \item GitHub: github.com/neyhartj
 \end{itemize}
-\end{large}
 
+
+
+% % Split into columns
+% \begin{columns}[t,totalwidth=\onecolwid] % Split up the two columns wide column
+%
+% \begin{column}{0.5\onecolwid}
+%
+%
+%
+% % QR code
+% \begin{center}
+%
+% Read our paper in \textit{Crop Science}:
+%
+% \begin{figure}
+%   \includegraphics[width=0.5\linewidth]{figures/cs_qr_code.png}
+% \end{figure}
+%
+% \end{center}
+%
+%
+% \end{column}
+%
+% \begin{column}{0.5\onecolwid}
+%
+%
+% % QR code
+% \begin{center}
+%
+% Access the code for this analysis:
+%
+% \begin{figure}
+%   \includegraphics[width=0.5\linewidth]{figures/github_qr_code.png}
+% \end{figure}
+%
+% \end{center}
+%
+%
+% \end{column}
+%
+% \end{columns}
 
 
 \end{alertblock}
@@ -528,12 +635,17 @@ Text
 \end{column}
 
 
+% Spacer
+\begin{column}{0.02\twocolwid}
+\end{column}
+
+
 
 %----------------------------------------------------------------------------------------
 
 %% Open an Acknowledgements/Reference column
 
-\begin{column}{1\onecolwid}
+\begin{column}{0.48\twocolwid}
 
 
 
@@ -549,7 +661,7 @@ Text
 
 \begin{footnotesize}
 
-Text
+We thank C. Evans, C. Martens, and S. Yang (USDA-ARS) for providing data from the nursery reports. This research was supported by USDA National Institute of Food and Agriculture Grant 2018-67013-27620 and USDA-ARS project 8042-21000-279-00D. USDA is an equal opportunity provider and employer.
 
 \end{footnotesize}
 
@@ -567,13 +679,13 @@ Text
 
 % \setbeamercolor{
 
-\begin{tiny}
+\begin{footnotesize}
 
 \bibliographystyle{supporting_files/posterbibstyle}
 \bibliography{\mendlibrary}
 
 
-\end{tiny}
+\end{footnotesize}
 
 % End the reference block
 \end{block}
@@ -597,12 +709,14 @@ Text
 % \end{alertblock}
 
 
-%----------------------------------------------------------------------------------------
 % End the acknowlegements/references column
 \end{column}
-%----------------------------------------------------------------------------------------
 
-%----------------------------------------------------------------------------------------
+% Spacer
+\begin{column}{0.02\twocolwid}
+\end{column}
+
+
 % End the two bottom columns
 \end{columns}
 %----------------------------------------------------------------------------------------
